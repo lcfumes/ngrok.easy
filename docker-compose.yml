@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  ngrok:
+    image: ngrok/ngrok
+    command: http ${PORT} --domain=${NGROK_DOMAIN}
+    environment:
+      - NGROK_AUTHTOKEN=${NGROK_AUTHTOKEN}
+    ports:
+      - "${PORT}:${PORT}"
